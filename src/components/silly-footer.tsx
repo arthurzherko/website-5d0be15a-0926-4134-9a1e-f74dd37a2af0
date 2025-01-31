@@ -10,10 +10,10 @@ export function SillyFooter() {
           <Button
             variant="ghost"
             size="sm"
-            className="group animate-pulse hover:animate-none"
+            className="group animate-pulse hover:animate-none text-foreground"
           >
             <Heart className="mr-2 h-4 w-4 text-destructive group-hover:animate-ping" />
-            <Typography.Small>
+            <Typography.Small className="text-foreground">
               Сделано с любовью и глупостью
             </Typography.Small>
           </Button>
