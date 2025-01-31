@@ -24,22 +24,22 @@ export function SillyCard({ title, description, content, sillyFact }: SillyCardP
 
   return (
     <motion.div
-      className="perspective-1000"
+      className="perspective-1000 h-full"
       animate={{ scale: isHovered ? 1.02 : 1 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
       <motion.div
-        className="relative preserve-3d"
+        className="relative preserve-3d h-full"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Card className="backface-hidden">
+        <Card className="backface-hidden h-full flex flex-col">
           <CardHeader>
             <CardTitle>{title}</CardTitle>
             <CardDescription>{description}</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex-1">
             <Typography.P>{content}</Typography.P>
           </CardContent>
           <CardFooter>
@@ -50,13 +50,13 @@ export function SillyCard({ title, description, content, sillyFact }: SillyCardP
         </Card>
 
         <Card 
-          className="absolute inset-0 backface-hidden rotate-y-180"
+          className="absolute inset-0 backface-hidden rotate-y-180 flex flex-col"
           onClick={() => setIsFlipped(false)}
         >
           <CardHeader>
             <CardTitle>Глупый факт!</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex-1">
             <Typography.P>{sillyFact}</Typography.P>
           </CardContent>
           <CardFooter>
