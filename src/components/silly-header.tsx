@@ -19,7 +19,7 @@ export function SillyHeader() {
           >
             <Link 
               to="/" 
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-2 text-foreground hover:text-foreground/80"
               onMouseEnter={() => setIsWiggling(true)}
               onMouseLeave={() => setIsWiggling(false)}
             >
@@ -29,15 +29,15 @@ export function SillyHeader() {
           </motion.div>
           
           <nav className="flex items-center space-x-6">
-            <Link to="/silly">
-              <Button variant="ghost">Глупости</Button>
-            </Link>
-            <Link to="/very-silly">
-              <Button variant="ghost">Очень глупости</Button>
-            </Link>
-            <Link to="/mega-silly">
-              <Button variant="ghost">Мега глупости</Button>
-            </Link>
+            <Button asChild variant="ghost" className="text-foreground hover:text-foreground/80 hover:bg-accent/10">
+              <Link to="/silly">Глупости</Link>
+            </Button>
+            <Button asChild variant="ghost" className="text-foreground hover:text-foreground/80 hover:bg-accent/10">
+              <Link to="/very-silly">Очень глупости</Link>
+            </Button>
+            <Button asChild variant="ghost" className="text-foreground hover:text-foreground/80 hover:bg-accent/10">
+              <Link to="/mega-silly">Мега глупости</Link>
+            </Button>
             <ModeToggle />
           </nav>
         </div>
